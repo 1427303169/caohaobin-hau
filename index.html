@@ -68,8 +68,17 @@
             text-align: center;
             font-size: 16px;
             color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 35px;
+            margin-bottom: 8px;
             font-weight: 400;
+        }
+
+        .vet-badge {
+            text-align: center;
+            font-size: 13px;
+            color: #ffd54f;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            font-weight: 500;
         }
 
         .sidebar-section {
@@ -177,6 +186,13 @@
             border-radius: 0 10px 10px 0;
         }
 
+        .military-card {
+            background: #f1f8f4;
+            border-left: 4px solid #2e7d32;
+            padding: 20px 24px;
+            border-radius: 0 10px 10px 0;
+        }
+
         .edu-header {
             display: flex;
             justify-content: space-between;
@@ -189,6 +205,12 @@
             font-size: 18px;
             font-weight: 700;
             color: #1a237e;
+        }
+
+        .military-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2e7d32;
         }
 
         .edu-time {
@@ -280,6 +302,11 @@
             border-left: 3px solid #3949ab;
         }
 
+        .honor-item.military {
+            background: #f1f8f4;
+            border-left: 3px solid #2e7d32;
+        }
+
         .print-btn {
             position: fixed;
             bottom: 30px;
@@ -345,6 +372,7 @@
             </div>
             <h1 class="name">曹浩宾</h1>
             <p class="job-title">软件开发实习生</p>
+            <p class="vet-badge">🎖 退役大学生士兵</p>
 
             <div class="sidebar-section">
                 <h3 class="sidebar-title">联系方式</h3>
@@ -377,6 +405,14 @@
                     <div class="info-value">共青团员</div>
                 </div>
                 <div class="info-item">
+                    <div class="info-label">身份</div>
+                    <div class="info-value">退役大学生士兵</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">服役时间</div>
+                    <div class="info-value">20XX.09 - 20XX.09（占位）</div>
+                </div>
+                <div class="info-item">
                     <div class="info-label">籍贯</div>
                     <div class="info-value">河南鄢陵</div>
                 </div>
@@ -401,13 +437,27 @@
             <div class="sidebar-section">
                 <h3 class="sidebar-title">个人优势</h3>
                 <div class="info-item" style="line-height: 1.8; font-size: 14px; opacity: 0.95;">
-                    学习能力强，对编程和计算机技术有浓厚兴趣；具备较好的逻辑思维与问题分析能力；善于沟通协作，能够积极参与团队项目开发。
+                    退役大学生士兵，纪律严明、执行力强、抗压能力突出；学习主动，对编程和计算机技术有浓厚兴趣；逻辑思维与问题分析能力较好；善于沟通协作，能在团队中主动担当。
                 </div>
             </div>
         </aside>
 
         <!-- 右侧主内容 -->
         <main class="main-content">
+            <section class="section">
+                <h2 class="section-title">服役经历</h2>
+                <div class="military-card">
+                    <div class="edu-header">
+                        <span class="military-name">中国人民解放军 · XX 部队</span>
+                        <span class="edu-time">202X.09 - 202X.09</span>
+                    </div>
+                    <div class="edu-major">战士 · XX 岗位（请替换为真实信息）</div>
+                    <div class="edu-detail">
+                        服役期间严守部队纪律，吃苦耐劳，系统完成新兵训练与专业岗位集训，参与日常战备执勤与集体任务，锤炼出过硬的身体素质、坚强的意志力与高度的责任感。在集体生活中养成令行禁止的执行力、严谨的作风和良好的团队协作意识，具备较强的抗压能力与突发事件应对能力。
+                    </div>
+                </div>
+            </section>
+
             <section class="section">
                 <h2 class="section-title">教育背景</h2>
                 <div class="education-card">
@@ -462,6 +512,7 @@
             <section class="section">
                 <h2 class="section-title">荣誉与证书</h2>
                 <div class="honor-list">
+                    <div class="honor-item military">部队"优秀士兵"（占位，请替换）</div>
                     <div class="honor-item">全国计算机等级考试二级（备考中）</div>
                     <div class="honor-item">CET-4 英语四级（备考中）</div>
                     <div class="honor-item">校级程序设计竞赛参与奖</div>
@@ -472,7 +523,7 @@
             <section class="section">
                 <h2 class="section-title">自我评价</h2>
                 <p class="self-intro">
-                    我是一名来自河南鄢陵的软件工程专业大一学生，现就读于河南农业大学。高中毕业于鄢陵县第一高级中学，理科基础扎实，逻辑思维较好。进入大学后，对编程和软件开发产生了浓厚兴趣，正在系统学习 C/C++、Python、数据结构与算法、Web 开发等基础知识。我具备较强的学习能力和主动性，善于利用网络资源自学新技术，乐于参与团队项目。希望能够在实习岗位中锻炼实践能力，将所学知识应用于真实项目，同时持续提升自己的技术水平和职业素养。
+                    我是一名退役大学生士兵，现就读于河南农业大学软件工程专业（2025 级）。高中毕业于鄢陵县第一高级中学，后参军入伍，在部队服役期间锤炼了吃苦耐劳、纪律严明、执行力强、团队协作的军人作风。退役复学后转入软件工程专业学习，对编程和计算机技术抱有浓厚兴趣，正在系统学习 C/C++、Python、数据结构与算法、Web 开发等基础知识。我既有军人特有的责任感与抗压能力，又具备较强的学习主动性和逻辑思维，善于利用资源自学、乐于在团队中担当。希望能在实习岗位上将部队养成的过硬作风与专业技能结合，踏实做事、持续成长。
                 </p>
             </section>
         </main>
