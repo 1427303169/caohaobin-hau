@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>曹浩宾 - 个人简历</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .resume-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: #fff;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            min-height: 1100px;
+        }
+
+        /* 左侧边栏 */
+        .sidebar {
+            width: 320px;
+            background: linear-gradient(160deg, #1a237e 0%, #3949ab 100%);
+            color: #fff;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .photo-wrapper {
+            width: 180px;
+            height: 220px;
+            margin: 0 auto 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .photo-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .name {
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+
+        .job-title {
+            text-align: center;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 35px;
+            font-weight: 400;
+        }
+
+        .sidebar-section {
+            margin-bottom: 32px;
+        }
+
+        .sidebar-title {
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 14px;
+            font-size: 14px;
+        }
+
+        .contact-icon {
+            width: 20px;
+            min-width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            opacity: 0.9;
+        }
+
+        .contact-text {
+            word-break: break-all;
+            opacity: 0.95;
+        }
+
+        .info-item {
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .info-label {
+            opacity: 0.7;
+            font-size: 12px;
+            margin-bottom: 2px;
+        }
+
+        .info-value {
+            font-weight: 500;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin: 0 6px 8px 0;
+            transition: background 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* 右侧主内容 */
+        .main-content {
+            flex: 1;
+            padding: 45px 50px;
+        }
+
+        .section {
+            margin-bottom: 38px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a237e;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #e8eaf6;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 22px;
+            background: #3949ab;
+            margin-right: 12px;
+            border-radius: 3px;
+        }
+
+        .education-card {
+            background: #f8f9ff;
+            border-left: 4px solid #3949ab;
+            padding: 20px 24px;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .school-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a237e;
+        }
+
+        .edu-time {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .edu-major {
+            font-size: 15px;
+            color: #444;
+            margin-bottom: 8px;
+        }
+
+        .edu-detail {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .project-item {
+            margin-bottom: 26px;
+            padding-left: 20px;
+            border-left: 2px solid #c5cae9;
+        }
+
+        .project-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .project-name {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1a237e;
+        }
+
+        .project-role {
+            font-size: 13px;
+            color: #666;
+            background: #e8eaf6;
+            padding: 3px 10px;
+            border-radius: 12px;
+        }
+
+        .project-tech {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .project-desc {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .project-desc li {
+            margin-bottom: 6px;
+            list-style-position: outside;
+            margin-left: 18px;
+        }
+
+        .self-intro {
+            font-size: 15px;
+            color: #444;
+            line-height: 2;
+            text-align: justify;
+        }
+
+        .honor-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .honor-item {
+            background: #f8f9ff;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #444;
+            border-left: 3px solid #3949ab;
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #3949ab;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(57, 73, 171, 0.4);
+            transition: all 0.3s;
+        }
+
+        .print-btn:hover {
+            background: #1a237e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(57, 73, 171, 0.5);
+        }
+
+        /* 打印样式 */
+        @media print {
+            body {
+                background: #fff;
+            }
+            .resume-container {
+                margin: 0;
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .print-btn {
+                display: none;
+            }
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .resume-container {
+                flex-direction: column;
+                margin: 0;
+                border-radius: 0;
+            }
+            .sidebar {
+                width: 100%;
+                padding: 30px 20px;
+            }
+            .main-content {
+                padding: 30px 20px;
+            }
+            .honor-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- 左侧边栏 -->
+        <aside class="sidebar">
+            <div class="photo-wrapper">
+                <img src="./1784369752173.jpg" alt="曹浩宾">
+            </div>
+            <h1 class="name">曹浩宾</h1>
+            <p class="job-title">软件开发实习生</p>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">联系方式</h3>
+                <div class="contact-item">
+                    <span class="contact-icon">📱</span>
+                    <span class="contact-text">176****0000</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">✉️</span>
+                    <span class="contact-text">caohaobin@example.com</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <span class="contact-text">河南省许昌市鄢陵县</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">💻</span>
+                    <span class="contact-text">github.com/caohaobin</span>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">个人信息</h3>
+                <div class="info-item">
+                    <div class="info-label">出生年月</div>
+                    <div class="info-value">2006 年 10 月</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">政治面貌</div>
+                    <div class="info-value">共青团员</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">籍贯</div>
+                    <div class="info-value">河南鄢陵</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">求职意向</div>
+                    <div class="info-value">软件开发 / 后端开发</div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">专业技能</h3>
+                <span class="skill-tag">C / C++</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">HTML / CSS</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">数据结构与算法</span>
+                <span class="skill-tag">Git 版本控制</span>
+                <span class="skill-tag">Linux 基础</span>
+                <span class="skill-tag">MySQL 基础</span>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">个人优势</h3>
+                <div class="info-item" style="line-height: 1.8; font-size: 14px; opacity: 0.95;">
+                    学习能力强，对编程和计算机技术有浓厚兴趣；具备较好的逻辑思维与问题分析能力；善于沟通协作，能够积极参与团队项目开发。
+                </div>
+            </div>
+        </aside>
+
+        <!-- 右侧主内容 -->
+        <main class="main-content">
+            <section class="section">
+                <h2 class="section-title">教育背景</h2>
+                <div class="education-card">
+                    <div class="edu-header">
+                        <span class="school-name">河南农业大学</span>
+                        <span class="edu-time">2025.09 - 2029.06（预计）</span>
+                    </div>
+                    <div class="edu-major">软件工程 · 本科（2025 级）</div>
+                    <div class="edu-detail">
+                        主修课程：程序设计基础（C 语言）、数据结构、计算机组成原理、操作系统、数据库原理、计算机网络、面向对象程序设计、Web 开发技术、软件工程等。
+                    </div>
+                </div>
+                <div class="education-card" style="margin-top: 15px; background: #fff; border-left: 4px solid #7986cb;">
+                    <div class="edu-header">
+                        <span class="school-name">鄢陵县第一高级中学</span>
+                        <span class="edu-time">2022.09 - 2025.06</span>
+                    </div>
+                    <div class="edu-detail">
+                        高中三年系统学习理科知识，培养了扎实的逻辑思维能力和良好的学习习惯，为大学软件工程专业学习打下坚实基础。
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">项目经历</h2>
+                <div class="project-item">
+                    <div class="project-header">
+                        <span class="project-name">学生信息管理系统</span>
+                        <span class="project-role">课程实践</span>
+                    </div>
+                    <div class="project-tech">技术栈：C 语言、文件 I/O、结构体</div>
+                    <ul class="project-desc">
+                        <li>基于 C 语言实现学生信息的增删改查、成绩排序与文件持久化功能。</li>
+                        <li>采用模块化设计，将数据操作、界面展示与文件存储分离，提升代码可维护性。</li>
+                        <li>通过指针与动态内存管理，实现数据的灵活存储与高效访问。</li>
+                    </ul>
+                </div>
+                <div class="project-item">
+                    <div class="project-header">
+                        <span class="project-name">个人学习博客网页</span>
+                        <span class="project-role">个人项目</span>
+                    </div>
+                    <div class="project-tech">技术栈：HTML、CSS、JavaScript</div>
+                    <ul class="project-desc">
+                        <li>独立设计并实现响应式静态博客页面，包含文章列表、详情展示与导航栏。</li>
+                        <li>使用 Flexbox 与 Grid 布局实现页面排版，掌握 CSS 动画与媒体查询基础。</li>
+                        <li>通过 DOM 操作实现简单的交互效果，如菜单切换、文章筛选等。</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">荣誉与证书</h2>
+                <div class="honor-list">
+                    <div class="honor-item">全国计算机等级考试二级（备考中）</div>
+                    <div class="honor-item">CET-4 英语四级（备考中）</div>
+                    <div class="honor-item">校级程序设计竞赛参与奖</div>
+                    <div class="honor-item">高中三好学生 / 优秀团员</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">自我评价</h2>
+                <p class="self-intro">
+                    我是一名来自河南鄢陵的软件工程专业大一学生，现就读于河南农业大学。高中毕业于鄢陵县第一高级中学，理科基础扎实，逻辑思维较好。进入大学后，对编程和软件开发产生了浓厚兴趣，正在系统学习 C/C++、Python、数据结构与算法、Web 开发等基础知识。我具备较强的学习能力和主动性，善于利用网络资源自学新技术，乐于参与团队项目。希望能够在实习岗位中锻炼实践能力，将所学知识应用于真实项目，同时持续提升自己的技术水平和职业素养。
+                </p>
+            </section>
+        </main>
+    </div>
+
+    <button class="print-btn" onclick="window.print()">打印 / 保存为 PDF</button>
+</body>
+</html>
